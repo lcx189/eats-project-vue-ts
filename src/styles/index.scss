@@ -1,0 +1,186 @@
+// @import './variables.scss'; // Already imported in style-resources-loader
+// @import './mixins.scss'; // Already imported in style-resources-loader
+@import './transition.scss';
+@import './svgicon.scss';
+@import './sidebar.scss';
+/* Global scss */
+
+body {
+  height: 100%;
+  min-width: 1000px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+    Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  background-color: #f4f7f6;
+}
+
+html {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:focus,
+a:hover {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+.blueBug {
+  color: #409eff !important;
+  position: relative;
+}
+
+.blueBug::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  height: 14px;
+  width: 0px;
+  border-right: solid 1px #ebeef5 !important;
+}
+
+.delBut {
+  color: #f56c6c !important;
+  position: relative;
+}
+
+.delBut::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  height: 14px;
+  width: 0px;
+  border-right: solid 1px #ebeef5 !important;
+}
+
+.el-message-box__wrapper {
+  .el-icon-warning {
+    display: none;
+  }
+
+  .el-message-box__message {
+    padding-left: 0px !important;
+  }
+
+  .el-message-box__header {
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+
+  .el-message-box__content {
+    padding-left: 30px;
+    padding-bottom: 20px;
+  }
+
+  .el-button--primary {
+    background-color: #409eff !important;
+  }
+
+  span {
+    color: #333;
+  }
+}
+
+//列表中的状态启用禁用以及小圆点统一样式
+.tableColumn-status {
+  display: flex;
+  align-items: center;
+}
+
+.tableColumn-status::before {
+  width: 5px;
+  height: 5px;
+  background: #1dc779;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.stop-use::before {
+  background-color: #bdbdbd;
+}
+
+.non::after {
+  display: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.continue {
+  border-color: #409eff !important;
+  background: #409eff !important;
+  color: #ffffff !important;
+}
+
+.continue:hover {
+  background-color: #66b1ff !important;
+  border-color: #66b1ff !important;
+  color: #ffffff !important;
+}
+
+.continue:active {
+  background-color: #3a8ee6 !important;
+  border-color: #3a8ee6 !important;
+  color: #ffffff !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.avatar-uploader .el-upload {
+  // border: dashed 2px #d8dde3 !important;
+  border-radius: 4px !important;
+  background: #fcfcfc;
+}
+
+.avatar-uploader .avatar-uploader-icon {
+  background: #fcfcfc;
+}
+
+.avatar-uploader .el-icon-plus:before {
+  content: '画像をアップロード' !important;
+  font-size: 12px;
+  color: #000;
+}
+
+.el-image__inner {
+  cursor: auto;
+}
+.container {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  padding: 30px 28px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+}
