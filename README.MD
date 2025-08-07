@@ -69,5 +69,5 @@ npm run build
 
 ## 関連プロジェクト
 
-- **バックエンド**: [Eats出前・デリバリー管理システム (バックエンド)](https://github.com/your-username/eats-backend-project-link) (※リンクを実際のURLに更新してください)
+- **バックエンド**: [Eats出前・デリバリー管理システム (バックエンド)](https://github.com/lcx189/eats-project)
 
