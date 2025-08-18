@@ -222,9 +222,9 @@ export default class extends Vue {
           if (!value) {
             callback(new Error('セットメニュー名を入力してください'))
           } else {
-            const reg = /^([A-Za-z0-9\u4e00-\u9fa5]){2,20}$/
+            const reg = /^[\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\uFF65-\uFF9F\u3400-\u4DBF\u4E00-\u9FFF]{2,20}$/
             if (!reg.test(value)) {
-              callback(new Error('セットメニュー名が正しくありません'))
+              callback(new Error('セットメニュー名が日本語のみ'))
             } else {
               callback()
             }
