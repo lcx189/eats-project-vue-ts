@@ -50,10 +50,10 @@
             placeholder="確認パスワードを入力してください"
           />
         </el-form-item> -->
-        <el-form-item label="電話番号:"
+        <el-form-item label="携帯番号:"
                       prop="phone">
           <el-input v-model="ruleForm.phone"
-                    placeholder="電話番号を入力してください"
+                    placeholder="携帯番号を入力してください"
                     maxlength="11" />
         </el-form-item>
         <el-form-item label="性別:"
@@ -63,11 +63,11 @@
             <el-radio label="女" />
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="身分証号:"
+        <el-form-item label="マイナンバー:"
                       prop="idNumber"
                       class="idNumber">
           <el-input v-model="ruleForm.idNumber"
-                    placeholder="身分証号を入力してください"
+                    placeholder="マイナンバーを入力してください"
                     maxlength="20" />
         </el-form-item>
         <div class="subBox address">
@@ -127,7 +127,8 @@ export default class extends Vue {
   // }
 
   private isCellPhone(val: any) {
-    if (!/^1(3|4|5|6|7|8)\d{9}$/.test(val)) {
+
+    if (!/^(070|080|090)\d{8}$/.test(val)) {
       return false
     } else {
       return true
@@ -147,14 +148,14 @@ export default class extends Vue {
   }
 
   private validID(rule: any, value: any, callback: any) {
-    // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
-    let reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+    // マイナンバーは数字12桁（ハイフンなし）
+    const reg = /^\d{12}$/
     if (value == '') {
-      callback(new Error('身分証号を入力してください'))
+      callback(new Error('マイナンバーを入力してください'))
     } else if (reg.test(value)) {
       callback()
     } else {
-      callback(new Error('身分証号が正しくありません'))
+      callback(new Error('マイナンバーが正しくありません'))
     }
   }
 

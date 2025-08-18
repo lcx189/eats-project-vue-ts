@@ -181,9 +181,9 @@ export default class extends Vue {
             if (!value) {
               callback(new Error('料理名を入力してください'))
             } else {
-              const reg = /^([A-Za-z0-9\u4e00-\u9fa5\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\s\-_\(\)\[\]]){2,20}$/
+              const reg = /^[\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\uFF65-\uFF9F\u3400-\u4DBF\u4E00-\u9FFF]{2,20}$/
               if (!reg.test(value)) {
-                callback(new Error('料理名の入力が正しくありません。2～20文字で入力してください'))
+                callback(new Error('料理名は日本語の文字のみ、2～20文字で入力してください'))
               } else {
                 callback()
               }

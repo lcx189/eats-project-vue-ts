@@ -4,7 +4,7 @@
       v-model="value"
       type="text"
       style="width: 100%"
-      placeholder="请选择口味"
+      placeholder="フレーバーを選択してください"
       clearable
       readonly
       @focus="selectFlavor(true)"
@@ -18,7 +18,7 @@
         @click="checkOption(it, ind)"
         >{{ it.name }}</span
       >
-      <span v-if="dishFlavorsData == []" class="none">无数据</span>
+      <span v-if="dishFlavorsData == []" class="none">データなし</span>
     </div>
   </div>
 </template>
